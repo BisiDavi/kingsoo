@@ -1,10 +1,11 @@
 import React from 'react';
 import { Grid, Typography, Button, makeStyles } from '@material-ui/core';
-import { Logo } from '../import/.';
+import { Logo } from '../import';
 import { zip } from 'lodash';
 import HomeIcon from '@material-ui/icons/Home';
 import RoomOutlinedIcon from '@material-ui/icons/RoomOutlined';
 import ReceiptOutlinedIcon from '@material-ui/icons/ReceiptOutlined';
+import { Link } from 'react-router-dom';
 
 
 const useStyle = makeStyles({
@@ -35,7 +36,7 @@ const useStyle = makeStyles({
     justifyContent: 'center',
   },
   sidebarbuttton: {
-    width: '100%',
+    width: '34vh',
     margin: '5px 0px',
   }
 });
@@ -47,10 +48,12 @@ const Sidebar = () => {
 
 
   const sidebarButton = zip(sidebarIcons, sidebarLinks).map((value) => (
-    <Button color={(value[1] === "Dashboard") ? "secondary" : "primary"}
-      variant="contained" className={classes.sidebarbuttton} startIcon={value[0]}>
-      {value[1]}
-    </Button>
+    <Link to={((value[1]) ? "/admin-home" : '/admin-home')}>
+      <Button color={(value[1] === "Dashboard") ? "secondary" : "primary"}
+        variant="contained" className={classes.sidebarbuttton} startIcon={value[0]}>
+        {value[1]}
+      </Button>
+    </Link>
   ));
 
   return (

@@ -31,19 +31,20 @@ const Roles = (props) => {
         <Typography className={classes.adminBodyText} variant="h4">Overview</Typography>
 
         <Grid justify="space-around" container>
-          <Grid item>
+          {
+            /**<Grid item>
             <Router>
               <Switch>
                 <Route path={props.link} component={props.component} />
               </Switch>
             </Router>
-          </Grid>
+          </Grid>*/}
           <Grid item>
             <Card adminRole="Finance Request" adminRoleImage="fas fa-dollar-sign" />
           </Grid>
         </Grid>
       </Grid>
-    </Grid>
+    </Grid >
   )
 }
 

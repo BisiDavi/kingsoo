@@ -1,7 +1,6 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import { Sidebar, Main } from '../../import';
+import { Grid, makeStyles } from '@material-ui/core';
+import { Sidebar, Header, Main } from '../import';
 
 
 const useStyle = makeStyles({
@@ -10,7 +9,7 @@ const useStyle = makeStyles({
   }
 })
 
-const DashboardHome = () => {
+const Layout = (props) => {
   const classes = useStyle()
   return (
     <Grid container className={classes.root}>
@@ -18,10 +17,15 @@ const DashboardHome = () => {
         <Sidebar />
       </Grid>
       <Grid item md={10} lg={10}>
-        <Main />
+        <Grid container>
+          <Header />
+        </Grid>
+        <Grid container>
+          {props.children}
+        </Grid>
       </Grid>
     </Grid>
   )
 }
 
-export default DashboardHome;
+export default Layout;

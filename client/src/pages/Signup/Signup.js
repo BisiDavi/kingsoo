@@ -1,5 +1,6 @@
 import React from 'react';
-import { Form, AuthenticationBanner } from '../../import';
+import { AuthenticationBanner } from '../../import/.';
+import Form from '../../components/form';
 import { CssBaseline, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
