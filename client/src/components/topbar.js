@@ -1,7 +1,7 @@
 import React from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import {
-  AppBar, Toolbar, IconButton, Typography, Badge,
+  AppBar, Toolbar, IconButton, Avatar, Badge,
   MenuItem, Menu, InputBase
 } from '@material-ui/core';
 import MailIcon from '@material-ui/icons/Mail';
@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
+      marginLeft: theme.spacing(0),
       width: 'auto',
     },
   },
@@ -112,8 +112,6 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
   );
 
@@ -151,7 +149,7 @@ export default function PrimarySearchAppBar() {
           aria-haspopup="true"
           color="inherit"
         >
-          <AccountCircleIcon />
+          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
         </IconButton>
         <p>Profile</p>
       </MenuItem>

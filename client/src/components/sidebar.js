@@ -15,6 +15,9 @@ const useStyle = makeStyles({
     padding: '50px 0px 10px 0px',
     borderRadius: '40%'
   },
+  sidebarcontent: {
+    marginTop: '30px'
+  },
   username: {
     color: 'white'
   },
@@ -24,6 +27,16 @@ const useStyle = makeStyles({
     background: '-webkit-linear-gradient(to right, #004e92, #000428)',  /* Chrome 10-25, Safari 5.1-6 */
     background: 'linear-gradient(to right, #004e92, #000428)', /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     height: '100vh'
+  },
+  sidebarbuttongroup: {
+    alignItems: 'flex- start!important',
+    marginTop: '-200px',
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  sidebarbuttton: {
+    width: '100%',
+    margin: '5px 0px',
   }
 });
 const Sidebar = () => {
@@ -35,24 +48,25 @@ const Sidebar = () => {
 
   const sidebarButton = zip(sidebarIcons, sidebarLinks).map((value) => (
     <Button color={(value[1] === "Dashboard") ? "secondary" : "primary"}
-      variant="contained" startIcon={value[0]}>
+      variant="contained" className={classes.sidebarbuttton} startIcon={value[0]}>
       {value[1]}
     </Button>
   ));
 
   return (
     <Grid container className={classes.sidebar}>
-      <Grid container direction="column" justify="flex-end"
-        alignItems="center">
-        <Grid item>
-          <img src={Logo} className={classes.logo} alt="kingsoo logo" />
+      <Grid container alignItems="flex-start" className={classes.sidebarcontent}>
+        <Grid container direction="column" justify="flex-end" alignItems="center">
+          <Grid item>
+            <img src={Logo} className={classes.logo} alt="kingsoo logo" />
+          </Grid>
+          <Grid item>
+            <Typography className={classes.username} variant="h6">Jane Doe</Typography>
+          </Grid>
         </Grid>
-        <Grid item>
-          <Typography className={classes.username} variant="h6">Jane Doe</Typography>
+        <Grid container className={classes.sidebarbuttongroup}>
+          {sidebarButton}
         </Grid>
-      </Grid>
-      <Grid container>
-        {sidebarButton}
       </Grid>
     </Grid>
   )
