@@ -41,6 +41,7 @@ const formData = myFormInput.map((item) => (
     label={item}
     name={item}
     autoComplete={item}
+    size="small"
     autoFocus
   />
 ))
@@ -55,6 +56,7 @@ return (
         Sign in
         </Typography>
       <form className={classes.form} noValidate>
+        
         {formData}
         <FormControlLabel
           control={<Checkbox value="remember" color="primary" />}
@@ -68,7 +70,7 @@ return (
           className={classes.submit}
         >
           Sign In
-            </Button>
+        </Button>
         <Grid container>        
           <Grid item xs>
             <Link href="#" variant="body2">

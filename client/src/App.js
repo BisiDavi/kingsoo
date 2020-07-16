@@ -1,12 +1,18 @@
 import React from 'react';
-import { Signup } from './import/.';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Signup, Login, ForgetPassword, Admin } from './import/.';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Signup />
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Signup} />
+        <Route path="/Login" component={Login} />
+        <Route path="/Forget-password" component={ForgetPassword} />
+        <Route path="/admin" component={Admin} />
+      </Switch>
+    </Router>
   );
 }
 

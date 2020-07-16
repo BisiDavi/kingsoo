@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
     backgroundSize: 'cover',
-    height: '100vh',
+    minHeight: '100%',
     backgroundPosition: 'center',
   },
 }));

@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const forgotPasswordValues = ["Email"];
 
-const forgotPasswordData = <Form key={item} myFormInput={forgotPasswordValues} />
+const forgotPasswordData = <Form  myFormInput={forgotPasswordValues} />
 
 const useStyles = makeStyles((theme) => ({
   root: {
