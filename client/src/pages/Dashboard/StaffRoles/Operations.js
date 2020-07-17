@@ -35,7 +35,7 @@ const Operations = () => {
           <Typography className={classes.adminBodyText} variant="h4">Overview</Typography>
           <Grid justify="space-around" className={classes.operations} container>
             <Grid item>
-              <Card link="/operations-overview" adminRole="Operations" adminRoleImage="fas fa-user-hard-hat" />
+              <Card link="/import-custom-clearance" adminRole="Operations" adminRoleImage="fas fa-user-hard-hat" />
             </Grid>
             <Grid item>
               <Card adminRole="Finance Request" adminRoleImage="fas fa-dollar-sign" />
